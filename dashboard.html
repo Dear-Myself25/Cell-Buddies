@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cell Buddies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0f0f0, #d9d9d9, #bfbfbf);
+            text-align: center;
+            color: #333;
+            animation: backgroundShift 10s infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        header {
+            background: linear-gradient(90deg, #4d4d4d, #666666, #808080);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .dashboard-content {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffffcc;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(100, 100, 100, 0.2);
+        }
+
+        .card {
+            background: white;
+            border-left: 6px solid #808080;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: perspective(1000px) rotateX(2deg) rotateY(1deg);
+            box-shadow: 0 12px 20px rgba(150, 150, 150, 0.4);
+        }
+
+        .card h3 {
+            color: #4d4d4d;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #808080;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #4d4d4d;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: auto;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding: 15px 0;
+        }
+
+        .carousel img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            scroll-snap-align: start;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(150, 150, 150, 0.2);
+        }
+
+        #chat-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background: #f0f0f0;
+        }
+
+        #user-message {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #send-btn {
+            background-color: #4d4d4d;
+        }
+
+        #logoutBtn {
+            background: #ccc;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+        <p>Explore resources for empowerment, education, and advocacy.</p>
+    </header>
+
+    <section class="dashboard-content">
+        <div class="carousel">
+            <img src="img1.jpg" alt="Restorative Justice">
+            <img src="img2.jpg" alt="Education & Training">
+            <img src="img3.jpg" alt="Empowerment">
+            <img src="img4.jpg" alt="Community Healing">
+            <img src="img5.jpg" alt="Digital Literacy">
+            <img src="img6.jpg" alt="Mental Health">
+            <img src="img7.jpg" alt="Prison Reform">
+        </div>
+
+        <div class="card">
+            <h3>Restorative Justice Platform</h3>
+            <p>AI-moderated accountability circles for self-reflection and relationship rebuilding.</p>
+            <button><a href="#" style="color: white; text-decoration: none;">Join Circle</a></button>
+        </div>
+
+        <div class="card">
+            <h3>Positive Masculinity Education</h3>
+            <p>Interactive courses on identity, power dynamics, and emotional intelligence.</p>
+            <button><a href="#" style="color: white; text-decoration: none;">Start Learning</a></button>
+        </div>
+
+        <div class="card">
+            <h3>Tech Skills & Economic Empowerment</h3>
+            <p>Gamified training in coding, AI, data analysis, entrepreneurship, and business planning.</p>
+            <button><a href="#" style="color: white; text-decoration: none;">Access Training</a></button>
+        </div>
+
+        <div class="card">
+            <h3>Advocacy & Movement Building</h3>
+            <p>AI-generated content for social media and campaign tools for GBVF prevention.</p>
+            <button><a href="#" style="color: white; text-decoration: none;">Join Movement</a></button>
+        </div>
+
+        <div class="card">
+            <h3>Digital Literacy for Inmates</h3>
+            <p>Foundational skills in digital communication, safety, and productive internet use.</p>
+            <button><a href="#" style="color: white; text-decoration: none;">Start Learning</a></button>
+        </div>
+
+        <div class="card">
+            <h3>Mental Health & Wellness</h3>
+            <p>Resources and virtual therapy sessions for emotional support and well-being.</p>
+            <button><a href="#" style="color: white; text-decoration: none;">Access Support</a></button>
+        </div>
+
+        <div class="card">
+            <h3>Prison Reform Advocacy</h3>
+            <p>Collaborative efforts and education to promote human rights and prison transformation.</p>
+            <button><a href="#" style="color: white; text-decoration: none;">Get Involved</a></button>
+        </div>
+
+        <div class="chat-container">
+            <h2>AI Assistant</h2>
+            <div id="chat-box"></div>
+            <textarea id="user-message" placeholder="Ask anything..."></textarea>
+            <button id="send-btn">Send</button>
+        </div>
+
+        <button id="logoutBtn">Logout</button>
+    </section>
+
+    <script>
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            alert("Logging out...");
+            window.location.href = "mfa-login.html";
+        });
+
+        document.getElementById("send-btn").addEventListener("click", async () => {
+            const message = document.getElementById("user-message").value.trim();
+            if (!message) return;
+
+            const chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+            document.getElementById("user-message").value = "";
+
+            try {
+                const response = await fetch("http://localhost:3000/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                chatBox.innerHTML += `<div><strong>AI Assistant:</strong> ${data.reply}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            } catch {
+                chatBox.innerHTML += `<div><strong>Error:</strong> Unable to fetch response.</div>`;
+            }
+        });
+    </script>
+    <script src="//code.tidio.co/jsfbvfl1c6bixctww0wyjwx1kzuaahz0.js" async></script>
+</body>
+</html>
